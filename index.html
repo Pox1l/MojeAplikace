@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moje Appka</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>Vítej v mojí appce!</h1>
+  <button onclick="klik()">Klikni mě!</button>
+
+  <script src="script.js"></script>
+  <script>
+    // Service Worker registrace
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('SW registrován'))
+        .catch(err => console.error('SW error:', err));
+    }
+  </script>
+</body>
+</html>
